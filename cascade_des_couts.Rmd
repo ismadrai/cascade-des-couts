@@ -453,6 +453,8 @@ cle_temps<-cle_temps%>%
 
 # Pour le code 41
 # on supprime les charges à enlever
+#calculons le poids de la charges qui est supprimé pour l'appliquer uniformément sur la base de charges
+poids_formation<-prestation_formation/a$code_41
 a<-a%>%
   mutate(code_41=code_41-prestation_formation)
 
@@ -612,7 +614,7 @@ for (i in 1:length(liste_col))
 
 ### Traitement spécifique de la DPOM COrse 
 
-La clé taux de frais qui est calculé ci-haut pour la l'activité *ST - Transverses en DPOM-DCR* n'est pas bonne, cette clé doit être calculé dur la base de la répartition des charges après retraitement sur ls activités pour lesquelles elle doit se ventiler. Le programme ci-dessous va corriger cette clé.
+La clé taux de frais qui est calculé ci-haut pour la l'activité *ST - Transverses en DPOM-DCR* n'est pas bonne, cette clé doit être calculé sur la base de la répartition des charges après retraitement sur les activités pour lesquelles elle doit se ventiler. Le programme ci-dessous va corriger cette clé.
 
 ```{r message=FALSE, warning=FALSE}
 
@@ -624,7 +626,10 @@ dpom<-data%>%filter(Code_manuel %in% c(1,5,7,8,9,12),
   mutate(cle_dpom=charges_dpom/sum(charges_dpom))
 
 # Correction de la clé
-cle_tf$weight_code_36=ifelse(cle_tf$code==dpom$code,dpom$cle_dpom,cle_tf$weight_code_36)            
+cle_tf<-cle_tf%>%
+  left_join(dpom)%>%
+  mutate(weight_code_36=cle_dpom)%>%
+  select(-c(charges_dpom,cle_dpom))
 
 ```
 
@@ -882,10 +887,16 @@ t_cle_cor$code<-substr(code, 8, 15)
 
 data_cascade<-left_join(data,t_cle_cor)
 
-# Calcul de la ventilation sur les activités opérationnelles
-data_cascade<-data_cascade%>% mutate_at(vars(starts_with("charge_code_")), funs(.*Ch_AP_Ret))
+#Répartition uniforme du poids de la prestation formation à enlever des charges
+# On crée une nouvelle variable de charge après retraitement qui n'est modifié que sur le code_41
+data_cascade<-data_cascade%>% 
+  mutate(Ch_AP_Ret_prest_form=ifelse(Code_manuel==41,Ch_AP_Ret*(1-poids_formation),Ch_AP_Ret))
 
-rm(list=ls()[! ls() %in% c("data_cascade","cols","fldc","Part_CVAE","Part_CFE","file.name", "path.to.file")])
+# Calcul de la ventilation sur les activités opérationnelles
+data_cascade<-data_cascade%>% mutate_at(vars(starts_with("charge_code_")), funs(.*Ch_AP_Ret_prest_form))
+#data_cascade<-data_cascade%>% mutate_at(vars(starts_with("charge_code_")), funs(.*Ch_AP_Ret))
+
+rm(list=ls()[! ls() %in% c("data_cascade","cols","fldc","Part_CVAE","Part_CFE","file.name", "path.to.file","poids_formation")])
 
 ```
 
@@ -993,7 +1004,7 @@ kable(cle_fldc, "html") %>%
   scroll_box(width = "1000px", height = "400px")
 
 
-rm(list=ls()[! ls() %in% c("data_cascade","file.name", "path.to.file")])
+rm(list=ls()[! ls() %in% c("data_cascade","file.name", "path.to.file","poids_formation")])
 
 ```
 
