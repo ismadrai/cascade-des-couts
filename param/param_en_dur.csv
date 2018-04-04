@@ -1,0 +1,6 @@
+Nom;Valeur;label
+charge_heberge_facteur;12537410,3016;pour le traitement activité 30
+prestation_formation;5308121;A soustraire des charge du code 41
+Formation_LCB;12625761;A allouer à l'activité 7
+Part_CVAE;47222150;A répartir selon une clé basée sur les charges de personnels
+Part_CFE;18473794;A répartir selon une clé basée sur les loyers des charges et compléments de loyers

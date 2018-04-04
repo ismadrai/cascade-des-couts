@@ -1,0 +1,36 @@
+Code;Lib;type_cle
+code_26;ETN RH tout domaine hors DPOM;temps
+code_27;ETN RH tout domaine;temps
+code_28;Reprise Brutes Dispositif DFC;temps
+code_29;CIE - Non productif & formation;temps
+code_30;CIE - Loyers et Charges Immobilières (hors Cplts de Loyers);temps + hébergement des facteurs
+code_31;CIE - Compléments de loyers;temps
+code_32;Directeur de Secteur (DS);temps spécifique
+code_33;Responsable Espace Comercial (REC);temps spécifique
+code_34;Responsable d'Exploitation (REX);temps
+code_35;CIE - Autres;temps
+code_36;ST - Transverses en DPOM-DCR;taux de frais
+code_37;ST - Locaux;taux de frais
+code_38;ST - Autres;taux de frais
+code_39;Structures Nationales;taux de frais
+code_40;Charges diverses;taux de frais
+code_41;SSM - Formation;temps + montant direct sur LCB en BP
+code_42;SSM - Comptabilité Fournisseurs;taux de frais
+code_43;SSM - Comptabilité Clients;temps
+code_44;SSM - Comptabilité Personnel;temps
+code_45;SSM - Comptabilité Bureau;taux de frais
+code_46;SSM - DISFE part bancaire;taux de frais
+code_47;SSM - DISFE;taux de frais
+code_48;SSM - Social;temps
+code_49;SSM - Syndical;temps
+code_50;SSM - DSEM;temps et taux de frais
+code_51;SSM - CSRH;temps
+code_52;SST - DISIT;temps et taux de frais
+code_53;SST - DSI centrale;taux de frais
+code_54;SST - DAPO;taux de frais
+code_55;SST - PI Corporate;taux de frais
+code_56;SST - DNAS;temps
+code_57;Courrier vers RLP;taux de frais
+code_58;Chargement d'office;temps
+code_59;FLDC - CET;Reste à qualifier
+code_60;CIE - Brigades;non ventillé

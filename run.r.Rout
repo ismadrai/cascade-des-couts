@@ -1,0 +1,411 @@
+
+R version 3.4.4 (2018-03-15) -- "Someone to Lean On"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R est un logiciel libre livré sans AUCUNE GARANTIE.
+Vous pouvez le redistribuer sous certaines conditions.
+Tapez 'license()' ou 'licence()' pour plus de détails.
+
+R est un projet collaboratif avec de nombreux contributeurs.
+Tapez 'contributors()' pour plus d'information et
+'citation()' pour la façon de le citer dans les publications.
+
+Tapez 'demo()' pour des démonstrations, 'help()' pour l'aide
+en ligne ou 'help.start()' pour obtenir l'aide au format HTML.
+Tapez 'q()' pour quitter R.
+
+[Sauvegarde de la session précédente restaurée]
+
+> # Installation des packages
+> if (!require(rmarkdown)){install.packages("rmarkdown",repos='http://cran.us.r-project.org')}
+Le chargement a nécessité le package : rmarkdown
+> library(rmarkdown)
+> 
+> 
+> file.name <- "cascade_des_couts"
+> path.to.file <- "W:/01 - Projets/DEV/Cascade"
+> 
+> rmarkdown::render(file.path(path.to.file, paste0(file.name, ".Rmd")))
+
+
+processing file: cascade_des_couts.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
+  ordinary text without R code
+
+  |                                                                         |...                                                              |   4%
+label: unnamed-chunk-1 (with options) 
+List of 2
+ $ eval   : logi FALSE
+ $ include: logi FALSE
+
+  |                                                                         |....                                                             |   6%
+  ordinary text without R code
+
+  |                                                                         |.....                                                            |   8%
+label: unnamed-chunk-2 (with options) 
+List of 3
+ $ message: logi FALSE
+ $ warning: logi FALSE
+ $ results: chr "hide"
+
+Loading required package: tidyverse
+-- Attaching packages ---------------------------------- tidyverse 1.2.1 --
+v ggplot2 2.2.1     v purrr   0.2.4
+v tibble  1.4.2     v dplyr   0.7.4
+v tidyr   0.8.0     v stringr 1.3.0
+v readr   1.1.1     v forcats 0.3.0
+-- Conflicts ------------------------------------- tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+Loading required package: stringi
+Loading required package: knitr
+Loading required package: DT
+Loading required package: sp
+Loading required package: kableExtra
+Loading required package: data.table
+
+Attaching package: 'data.table'
+
+The following objects are masked from 'package:dplyr':
+
+    between, first, last
+
+The following object is masked from 'package:purrr':
+
+    transpose
+
+Loading required package: microbenchmark
+Loading required package: plotly
+
+Attaching package: 'plotly'
+
+The following object is masked from 'package:ggplot2':
+
+    last_plot
+
+The following object is masked from 'package:stats':
+
+    filter
+
+The following object is masked from 'package:graphics':
+
+    layout
+
+  |                                                                         |......                                                           |  10%
+  ordinary text without R code
+
+  |                                                                         |........                                                         |  12%
+label: unnamed-chunk-3 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+Parsed with column specification:
+cols(
+  .default = col_character(),
+  Code_Activite = col_integer(),
+  temps_min = col_double()
+)
+See spec(...) for full column specifications.
+Parsed with column specification:
+cols(
+  .default = col_character(),
+  Code_Activite = col_integer()
+)
+See spec(...) for full column specifications.
+Parsed with column specification:
+cols(
+  Code = col_character(),
+  Lib = col_character(),
+  type_cle = col_character()
+)
+Parsed with column specification:
+cols(
+  PC = col_character(),
+  Lib_Processus_Cascade = col_character(),
+  AM = col_character(),
+  Lib_Activite_Metier = col_character(),
+  AC = col_character(),
+  Lib_Activite_Cascade = col_character(),
+  Label = col_character(),
+  Lib_Label_Analytique = col_character(),
+  Concatener_PC_AM_AC_Label = col_character(),
+  Code_manuel = col_integer(),
+  Type_activite = col_character(),
+  Activite_1 = col_character(),
+  Lib_Code = col_character()
+)
+Parsed with column specification:
+cols(
+  TCACAA = col_character(),
+  cice = col_double()
+)
+Parsed with column specification:
+cols(
+  Rubrique_Corp = col_character(),
+  Nature_FLDC = col_character()
+)
+Parsed with column specification:
+cols(
+  .default = col_character(),
+  Ste = col_integer(),
+  Chg_av_CICE_non_prod_form = col_double(),
+  Ch_AP_Ret = col_double()
+)
+See spec(...) for full column specifications.
+Parsed with column specification:
+cols(
+  Nom = col_character(),
+  Valeur = col_double(),
+  label = col_character()
+)
+  |                                                                         |.........                                                        |  14%
+  ordinary text without R code
+
+  |                                                                         |..........                                                       |  16%
+label: unnamed-chunk-4
+  |                                                                         |............                                                     |  18%
+  ordinary text without R code
+
+  |                                                                         |.............                                                    |  20%
+label: unnamed-chunk-5 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+Joining, by = "TCACAA"
+Joining, by = "Concatener_PC_AM_AC_Label"
+  |                                                                         |..............                                                   |  22%
+  ordinary text without R code
+
+  |                                                                         |................                                                 |  24%
+label: unnamed-chunk-6 (with options) 
+List of 1
+ $ message: logi FALSE
+
+  |                                                                         |.................                                                |  26%
+  ordinary text without R code
+
+  |                                                                         |..................                                               |  28%
+label: unnamed-chunk-7 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+`mutate_each()` is deprecated.
+Use `mutate_all()`, `mutate_at()` or `mutate_if()` instead.
+To map `funs` over a selection of variables, use `mutate_at()`
+  |                                                                         |....................                                             |  30%
+  ordinary text without R code
+
+  |                                                                         |.....................                                            |  32%
+label: unnamed-chunk-8 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+  |                                                                         |......................                                           |  34%
+  ordinary text without R code
+
+  |                                                                         |.......................                                          |  36%
+label: unnamed-chunk-9 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+  |                                                                         |.........................                                        |  38%
+  ordinary text without R code
+
+  |                                                                         |..........................                                       |  40%
+label: unnamed-chunk-10 (with options) 
+List of 4
+ $ eval   : logi FALSE
+ $ message: logi FALSE
+ $ warning: logi FALSE
+ $ include: logi FALSE
+
+  |                                                                         |...........................                                      |  42%
+  ordinary text without R code
+
+  |                                                                         |.............................                                    |  44%
+label: unnamed-chunk-11 (with options) 
+List of 1
+ $ message: logi FALSE
+
+Joining, by = "code"
+Joining, by = "code"
+  |                                                                         |..............................                                   |  46%
+  ordinary text without R code
+
+  |                                                                         |...............................                                  |  48%
+label: unnamed-chunk-12 (with options) 
+List of 1
+ $ message: logi FALSE
+
+  |                                                                         |................................                                 |  50%
+  ordinary text without R code
+
+  |                                                                         |..................................                               |  52%
+label: unnamed-chunk-13 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+  |                                                                         |...................................                              |  54%
+  ordinary text without R code
+
+  |                                                                         |....................................                             |  56%
+label: unnamed-chunk-14 (with options) 
+List of 1
+ $ echo: logi FALSE
+
+  |                                                                         |......................................                           |  58%
+  ordinary text without R code
+
+  |                                                                         |.......................................                          |  60%
+label: unnamed-chunk-15
+  |                                                                         |........................................                         |  62%
+  ordinary text without R code
+
+  |                                                                         |..........................................                       |  64%
+label: unnamed-chunk-16
+  |                                                                         |...........................................                      |  66%
+  ordinary text without R code
+
+  |                                                                         |............................................                     |  68%
+label: unnamed-chunk-17 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+`mutate_each()` is deprecated.
+Use `mutate_all()`, `mutate_at()` or `mutate_if()` instead.
+To map `funs` over a selection of variables, use `mutate_at()`
+`summarise_each()` is deprecated.
+Use `summarise_all()`, `summarise_at()` or `summarise_if()` instead.
+To map `funs` over a selection of variables, use `summarise_at()`
+  |                                                                         |..............................................                   |  70%
+  ordinary text without R code
+
+  |                                                                         |...............................................                  |  72%
+label: unnamed-chunk-18 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+`mutate_each()` is deprecated.
+Use `mutate_all()`, `mutate_at()` or `mutate_if()` instead.
+To map `funs` over a selection of variables, use `mutate_at()`
+`summarise_each()` is deprecated.
+Use `summarise_all()`, `summarise_at()` or `summarise_if()` instead.
+To map `funs` over a selection of variables, use `summarise_at()`
+`mutate_each()` is deprecated.
+Use `mutate_all()`, `mutate_at()` or `mutate_if()` instead.
+To map `funs` over a selection of variables, use `mutate_at()`
+`summarise_each()` is deprecated.
+Use `summarise_all()`, `summarise_at()` or `summarise_if()` instead.
+To map `funs` over a selection of variables, use `summarise_at()`
+`mutate_each()` is deprecated.
+Use `mutate_all()`, `mutate_at()` or `mutate_if()` instead.
+To map `funs` over a selection of variables, use `mutate_at()`
+`summarise_each()` is deprecated.
+Use `summarise_all()`, `summarise_at()` or `summarise_if()` instead.
+To map `funs` over a selection of variables, use `summarise_at()`
+`mutate_each()` is deprecated.
+Use `mutate_all()`, `mutate_at()` or `mutate_if()` instead.
+To map `funs` over a selection of variables, use `mutate_at()`
+`summarise_each()` is deprecated.
+Use `summarise_all()`, `summarise_at()` or `summarise_if()` instead.
+To map `funs` over a selection of variables, use `summarise_at()`
+  |                                                                         |................................................                 |  74%
+  ordinary text without R code
+
+  |                                                                         |.................................................                |  76%
+label: unnamed-chunk-19 (with options) 
+List of 1
+ $ echo: logi FALSE
+
+  |                                                                         |...................................................              |  78%
+  ordinary text without R code
+
+  |                                                                         |....................................................             |  80%
+label: unnamed-chunk-20 (with options) 
+List of 1
+ $ echo: logi FALSE
+
+  |                                                                         |.....................................................            |  82%
+  ordinary text without R code
+
+  |                                                                         |.......................................................          |  84%
+label: unnamed-chunk-21 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+Joining, by = "code"
+`mutate_each()` is deprecated.
+Use `mutate_all()`, `mutate_at()` or `mutate_if()` instead.
+To map `funs` over a selection of variables, use `mutate_at()`
+  |                                                                         |........................................................         |  86%
+  ordinary text without R code
+
+  |                                                                         |.........................................................        |  88%
+label: unnamed-chunk-22 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+  |                                                                         |..........................................................       |  90%
+  ordinary text without R code
+
+  |                                                                         |............................................................     |  92%
+label: unnamed-chunk-23 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+`mutate_each()` is deprecated.
+Use `mutate_all()`, `mutate_at()` or `mutate_if()` instead.
+To map `funs` over a selection of variables, use `mutate_at()`
+Joining, by = "Rubrique_Corp"
+`summarise_each()` is deprecated.
+Use `summarise_all()`, `summarise_at()` or `summarise_if()` instead.
+To map `funs` over all variables, use `summarise_all()`
+`summarise_each()` is deprecated.
+Use `summarise_all()`, `summarise_at()` or `summarise_if()` instead.
+To map `funs` over all variables, use `summarise_all()`
+Joining, by = "code"
+  |                                                                         |.............................................................    |  94%
+  ordinary text without R code
+
+  |                                                                         |..............................................................   |  96%
+label: unnamed-chunk-24 (with options) 
+List of 1
+ $ echo: logi FALSE
+
+  |                                                                         |................................................................ |  98%
+  ordinary text without R code
+
+  |                                                                         |.................................................................| 100%
+label: unnamed-chunk-25 (with options) 
+List of 1
+ $ echo: logi FALSE
+
+
+output file: cascade_des_couts.knit.md
+
+"C:/Users/pmph934/AppData/Local/Pandoc/pandoc" +RTS -K512m -RTS cascade_des_couts.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash+smart --output cascade_des_couts.html --email-obfuscation none --self-contained -M3GB +RTS -K64m -RTS --standalone --section-divs --table-of-contents --toc-depth 6 --variable toc_float=1 --variable toc_selectors=h1,h2,h3,h4,h5,h6 --variable toc_collapsed=1 --variable toc_smooth_scroll=1 --variable toc_print=1 --template "C:\Users\pmph934\Documents\R\win-library\3.4\rmarkdown\rmd\h\default.html" --highlight-style pygments --css notebook.css --variable "theme:cosmo" --include-in-header "C:\Users\pmph934\AppData\Local\Temp\RtmpUDV6et\rmarkdown-str2dc05f942af.html" --mathjax --variable "mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" --variable code_folding=hide --variable code_menu=1 
+
+Output created: cascade_des_couts.html
+Warning messages:
+1: In cle_tf$code == dpom$code :
+  la taille d'un objet plus long n'est pas multiple de la taille d'un objet plus court
+2: Deprecated, use tibble::rownames_to_column() instead. 
+3: Deprecated, use tibble::rownames_to_column() instead. 
+> 
+> browseURL( file.path(path.to.file, paste0(file.name, ".html")))
+> 
+> proc.time()
+utilisateur     système      écoulé 
+       7.83        2.82       55.64 
